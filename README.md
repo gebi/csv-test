@@ -51,9 +51,9 @@ Python
     11 -
 
 
-References
-----------
+References/Thx
+--------------
 
 http://tools.ietf.org/html/rfc4180
 
-+Matthias Wiesmann for his evil.csv testcase
+Matthias Wiesmann https://plus.google.com/+MatthiasWiesmann/ for his evil.csv input
