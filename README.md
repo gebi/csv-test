@@ -50,3 +50,10 @@ Python
     10 - 0:"quote me" 1:" please＂"
     11 -
 
+
+References
+----------
+
+http://tools.ietf.org/html/rfc4180
+
++Matthias Wiesmann for his evil.csv testcase
