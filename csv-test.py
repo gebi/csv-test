@@ -15,7 +15,7 @@ for row in spamreader:
     elemno = 0
     print lineno, "-",
     for elem in row:
-        print elemno, elem,
+        sys.stdout.write(" %d:\"%s\"" %(elemno, elem.replace("\n", "\\n")))
         elemno += 1
     print
     lineno += 1
