@@ -56,4 +56,4 @@ References/Thx
 
 http://tools.ietf.org/html/rfc4180
 
-Matthias Wiesmann https://plus.google.com/+MatthiasWiesmann/ for his evil.csv input
+Matthias Wiesmann https://wiesmann.codiferes.net/wordpress/archives/19862 for his evil.csv input
