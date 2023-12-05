@@ -14,42 +14,56 @@ Go
 --
 
     % go run csv-test.go <evil.csv                    
-    1 - 0:"character" 1:"quote"
-    2 - 0:"Inigo" 1:"You killed my father\nDarth, I am your father"
-    3 - 0:"Buddha" 1:""
-    4 - 0:"Dada" 1:"'dodo'"
-    5 - 0:"Evil Guy" 1:"\";drop table"
+    01 - 0:"character" 1:"quote"
+    02 - 0:"Inigo" 1:"You killed my father\nDarth, I am your father"
+    03 - 0:"Buddha" 1:""
+    04 - 0:"Dada" 1:"'dodo'"
+    05 - 0:"Evil Guy" 1:"\";drop table"
     line 7, column 10: bare " in non-quoted-field
     exit status 1
 
     % go run csv-test.go -trim_leading_space -lazy_quotes <evil.csv
-    1 - 0:"character" 1:"quote"
-    2 - 0:"Inigo" 1:"You killed my father\nDarth, I am your father"
-    3 - 0:"Buddha" 1:""
-    4 - 0:"Dada" 1:"'dodo'"
-    5 - 0:"Evil Guy" 1:"\";drop table"
-    6 - 0:"Expert" 1:"Trust me, I'm an expert"
-    7 - 0:"Balmer" 1:"\"Developers, Developers\""
-    8 - 0:"Yoda，Do，do not．do not try"
-    9 - 0:"Me" 1:"＂Do not"
+    01 - 0:"character" 1:"quote"
+    02 - 0:"Inigo" 1:"You killed my father\nDarth, I am your father"
+    03 - 0:"Buddha" 1:""
+    04 - 0:"Dada" 1:"'dodo'"
+    05 - 0:"Evil Guy" 1:"\";drop table"
+    06 - 0:"Expert" 1:"Trust me, I'm an expert"
+    07 - 0:"Balmer" 1:"\"Developers, Developers\""
+    08 - 0:"Yoda，Do，do not．do not try"
+    09 - 0:"Me" 1:"＂Do not"
     10 - 0:"quote me" 1:"please＂"
 
 Python
 ------
 
-    % ./csv-test.py <evil.csv
-    1 - 0:"character" 1:"quote"
-    2 - 0:"Inigo" 1:"You killed my father\nDarth, I am your father"
-    3 - 0:"Buddha" 1:""
-    4 - 0:"Dada" 1:"'dodo'"
-    5 - 0:"Evil Guy" 1:"";drop table"
-    6 - 0:"Expert" 1:" "Trust me" 2:" I'm an expert""
-    7 - 0:"Balmer" 1:""Developers, Developers""
-    8 - 0:"Yoda，Do，do not．do not try"
-    9 - 0:"Me" 1:"＂Do not"
+python2.7 and python3.11 behave the same in my tests with `evil.csv`
+
+    % python2.7 ./csv-test.py <evil.csv
+    01 - 0:"character" 1:"quote"
+    02 - 0:"Inigo" 1:"You killed my father\nDarth, I am your father"
+    03 - 0:"Buddha" 1:""
+    04 - 0:"Dada" 1:"'dodo'"
+    05 - 0:"Evil Guy" 1:"";drop table"
+    06 - 0:"Expert" 1:" "Trust me" 2:" I'm an expert""
+    07 - 0:"Balmer" 1:""Developers, Developers""
+    08 - 0:"Yoda，Do，do not．do not try"
+    09 - 0:"Me" 1:"＂Do not"
     10 - 0:"quote me" 1:" please＂"
     11 -
 
+    % python3 ./csv-test.py --trim_leading_space <evil.csv
+    01 -  0:"character" 1:"quote"
+    02 -  0:"Inigo" 1:"You killed my father\nDarth, I am your father"
+    03 -  0:"Buddha" 1:""
+    04 -  0:"Dada" 1:"'dodo'"
+    05 -  0:"Evil Guy" 1:"";drop table"
+    06 -  0:"Expert" 1:"Trust me, I'm an expert"
+    07 -  0:"Balmer" 1:""Developers, Developers""
+    08 -  0:"Yoda，Do，do not．do not try"
+    09 -  0:"Me" 1:"＂Do not"
+    10 -  0:"quote me" 1:"please＂"
+    11 -
 
 References/Thx
 --------------

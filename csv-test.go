@@ -26,7 +26,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Printf("%d -", lineno)
+		fmt.Printf("%.2d -", lineno)
 		for num, elem := range record {
 			fmt.Printf(" %d:%q", num, elem)
 		}

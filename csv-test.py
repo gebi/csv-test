@@ -13,9 +13,9 @@ spamreader = csv.reader(sys.stdin, skipinitialspace=opts.trim_leading_space)
 lineno = 1
 for row in spamreader:
     elemno = 0
-    print lineno, "-",
+    sys.stdout.write("%.2d - " %(lineno))
     for elem in row:
         sys.stdout.write(" %d:\"%s\"" %(elemno, elem.replace("\n", "\\n")))
         elemno += 1
-    print
+    sys.stdout.write("\n")
     lineno += 1
